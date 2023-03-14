@@ -1,16 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import bg from './components/assets/bg.png';
-// import Sidebar from './components/widgets/Sidebar';
+import React from 'react';
 import Home from './page/Home';
-import Notes from './page/Notes';
-import Signup from './page/Signup';
 import Login from './page/Login';
-import Timer from './page/Timer';
-import Stopwatch from './page/Stopwatch';
-import {Routes, Route} from 'react-router-dom';
-// import Navbar from './components/widgets/Navbar';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Layout from './components/widgets/Layout';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 
 function App() {
@@ -31,38 +23,9 @@ function App() {
                   
                   }
                 />
-
-                <Route 
-                  path="/notes"
-                  element={
-                    <Layout>
-                      < Notes />
-                    </Layout>
-                  
-                  }
-                />
-
-                <Route 
-                  path="/timer"
-                  element={
-                    <Layout>
-                      < Timer />
-                    </Layout>
-                  
-                  }
-                />
-                
-                <Route 
-                  path="/stopwatch"
-                  element={
-                    <Layout>
-                      < Stopwatch />
-                    </Layout>
-                  
-                  }
-                />              
-              
-              <Route path="/" element={<Signup/>}/>
+              <Route path="/" element={<Layout>
+                  < Home />
+              </Layout>}/>
               <Route path="/login" element={<Login/>}/>
             </Routes>          
           </div>
